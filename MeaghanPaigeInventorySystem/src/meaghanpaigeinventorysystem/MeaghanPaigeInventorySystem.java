@@ -11,6 +11,7 @@ package meaghanpaigeinventorysystem;
  */
 public class MeaghanPaigeInventorySystem {
 
+    //test comment
     /**
      * @param args the command line arguments
      */
