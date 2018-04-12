@@ -9,5 +9,6 @@ package meaghanpaigeinventorysystem;
  * @author Rick
  */
 public class Invoice {
+    //test
     
 }
