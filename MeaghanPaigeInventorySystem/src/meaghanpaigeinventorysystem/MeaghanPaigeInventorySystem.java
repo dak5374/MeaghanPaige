@@ -10,6 +10,7 @@ package meaghanpaigeinventorysystem;
  * @author usmck
  */
 public class MeaghanPaigeInventorySystem {
+    //test comment
 
     //test comment
     /**
