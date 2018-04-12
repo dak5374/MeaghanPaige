@@ -15,8 +15,7 @@ public class Client {
     
     //Constructor
     void Client(int id, String name, int phone, int fax, String email, 
-                Date membershipDate, String membershipStatus)
-    {
+                Date membershipDate, String membershipStatus) {
         this.setClientID(id);
         this.setClientName(name);
         this.setClientPhone(phone);
