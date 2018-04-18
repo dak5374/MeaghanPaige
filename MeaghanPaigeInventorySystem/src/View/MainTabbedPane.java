@@ -10,16 +10,15 @@ import javax.swing.*;
 
 public class MainTabbedPane extends JFrame{
     
-    JPanel welcomePanel = new JPanel(); // these panels should be separate classes that we create here
+    JPanel welcomePanel = new WelcomePanel(); // these panels should be separate classes that we create here
     JPanel importPanel = new JPanel();
-    
-    JLabel welcomeLabel = new JLabel("Welcome"); 
+     
     JLabel importLabel = new JLabel("Import");
     
     JTabbedPane mainTabbedPane = new JTabbedPane();
     
     public MainTabbedPane(){
-        welcomePanel.add(welcomeLabel);
+
         importPanel.add(importLabel);
         
         mainTabbedPane.add("Welcome Panel", welcomePanel);
