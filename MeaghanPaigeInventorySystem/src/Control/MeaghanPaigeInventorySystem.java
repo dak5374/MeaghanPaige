@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import View.MainTabbedPane;
 import javax.swing.JFrame;
+import View.addBoutiquePanel;
 
 public class MeaghanPaigeInventorySystem {
 
@@ -15,8 +16,14 @@ public class MeaghanPaigeInventorySystem {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
+        
+        addBoutiquePanel aBP = new addBoutiquePanel();
         MainTabbedPane mTP = new MainTabbedPane();
+        JFrame dataEntryFrame = new JFrame();
+        dataEntryFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        dataEntryFrame.setSize(600, 400);
+        dataEntryFrame.add(aBP);
+        dataEntryFrame.setVisible(false);
         mTP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mTP.setSize(600, 400);
         mTP.setVisible(true);
@@ -35,9 +42,7 @@ public class MeaghanPaigeInventorySystem {
 
             String msAccDB = "IST440MeaghanPaige.accdb";
             String dbURL = "jdbc:ucanaccess://src/Control/" + msAccDB;
-            System.out.println("not connected");
             connection = DriverManager.getConnection(dbURL);
-            System.out.println("connected");
             statement = connection.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM CLIENT");
             System.out.println("CLIENT ID\t\tName\t\tAddress\t\t\t\tCity");
