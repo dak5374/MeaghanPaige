@@ -33,35 +33,38 @@ public class MeaghanPaigeInventorySystem {
 
         try {
 
-            String msAccDB = "IST440-Meaghan Paige.accdb";
-            String dbURL = "jdbc:ucanaccess://" + msAccDB;
+            String msAccDB = "IST440MeaghanPaige.accdb";
+            String dbURL = "jdbc:ucanaccess://src/Control/" + msAccDB;
+            System.out.println("not connected");
             connection = DriverManager.getConnection(dbURL);
+            System.out.println("connected");
             statement = connection.createStatement();
-//            resultSet = statement.executeQuery("SELECT * FROM PLAYER");
-//            System.out.println("ID\tName\t\t\tAge\tMatches");
-//            System.out.println("==\t================\t===\t=======");
-//            while (resultSet.next()) {
-//                System.out.println(resultSet.getInt(1) + "\t"
-//                        + resultSet.getString(2) + "\t"
-//                        + resultSet.getString(3) + "\t"
-//                        + resultSet.getString(4));
-//            }
+            resultSet = statement.executeQuery("SELECT * FROM CLIENT");
+            System.out.println("CLIENT ID\t\tName\t\t\tAddress\t\t\t\t\tCity");
+            System.out.println("==\t\t\t================\t===\t=======");
+            while (resultSet.next()) {
+                System.out.println(resultSet.getInt(1) + "\t\t\t"
+                        + resultSet.getString(2) + "\t\t"
+                        + resultSet.getString(3) + "\t"
+                        + resultSet.getString(4));
+            }
         } catch (SQLException sqlex) {
+            System.out.println("line 52");
             sqlex.printStackTrace();
         } finally {
         }
             try {
                 if (null != connection) {
 
-                    // cleanup resources, once after processing
                     resultSet.close();
                     statement.close();
 
-                    // and then finally close connection
                     connection.close();
                 }
             } catch (SQLException sqlex) {
+                System.out.println("line 67");
                 sqlex.printStackTrace();
+                
             }
         }
     }
