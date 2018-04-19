@@ -5,24 +5,74 @@
  */
 package View;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.*;
 
+public class MainTabbedPane extends JFrame {
 
-public class MainTabbedPane extends JFrame{
-    
+    Connection connection = null;
+    Statement statement = null;
+    ResultSet resultSet = null;
     WelcomePanel welcomePanel = new WelcomePanel();
     ImportPanel importPanel = new ImportPanel();
     InventoryPanel inventoryPanel = new InventoryPanel();
-    
+
     JTabbedPane mainTabbedPane = new JTabbedPane();
-    
-    public MainTabbedPane(){
-;
-        
+
+    public MainTabbedPane() {
+        ;
+
         mainTabbedPane.add("Welcome Panel", welcomePanel);
         mainTabbedPane.add("Import Panel", importPanel);
         mainTabbedPane.add("Inventory Panel", inventoryPanel);
         add(mainTabbedPane);
+
+        try {
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+        } catch (ClassNotFoundException cnfex) {
+
+            System.out.println("Problem in loading or "
+                    + "registering MS Access JDBC driver");
+            cnfex.printStackTrace();
+        }
+
+        try {
+
+            String msAccDB = "IST440MeaghanPaige.accdb";
+            String dbURL = "jdbc:ucanaccess://src/Control/" + msAccDB;
+            connection = DriverManager.getConnection(dbURL);
+//            statement = connection.createStatement();
+//            resultSet = statement.executeQuery("SELECT * FROM CLIENT");
+//            System.out.println("CLIENT ID\t\tName\t\tAddress\t\t\t\tCity");
+//            System.out.println("==\t\t================\t===\t\t\t=======");
+//            while (resultSet.next()) {
+//                System.out.println(resultSet.getInt(1) + "\t\t\t"
+//                        + resultSet.getString(2) + "\t\t\t"
+//                        + resultSet.getString(3) + "\t\t"
+//                        + resultSet.getString(4));
+//            }
+//        } catch (SQLException sqlex) {
+//            sqlex.printStackTrace();
+//        } finally {
+//        }
+//        try {
+//            if (null != connection) {
+//
+//                resultSet.close();
+//                statement.close();
+//
+//                connection.close();
+//            }
+        } catch (SQLException sqlex) {
+            System.out.println("line 67");
+            sqlex.printStackTrace();
+
+        }
     }
-    
+
 }

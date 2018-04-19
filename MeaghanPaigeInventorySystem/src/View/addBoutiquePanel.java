@@ -5,16 +5,22 @@
  */
 package View;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 /**
  *
  * @author usmck
  */
-public class addBoutiquePanel extends javax.swing.JPanel {
+public class addBoutiquePanel extends javax.swing.JFrame {
 
     public addBoutiquePanel() {
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setSize(600, 400);
+        JPanel addBoutiquePanel = new JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        clientName = new javax.swing.JTextField();
+        clientAddress = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
@@ -22,13 +28,14 @@ public class addBoutiquePanel extends javax.swing.JPanel {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Add Client");
 
-        jTextField1.setText("Client Name");
+        clientName.setText("Client Name");
 
-        jTextField2.setText("Client Address");
+        clientAddress.setText("Client Address");
 
         jTextField3.setText("Client City");
 
@@ -44,8 +51,8 @@ public class addBoutiquePanel extends javax.swing.JPanel {
 
         jButton1.setText("Add Client");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(addBoutiquePanel);
+        addBoutiquePanel.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -55,12 +62,12 @@ public class addBoutiquePanel extends javax.swing.JPanel {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                         .addComponent(jTextField7)
-                                                        .addComponent(jTextField1)
+                                                        .addComponent(clientName)
                                                         .addComponent(jTextField3)
                                                         .addComponent(jTextField5))
                                                 .addGap(160, 160, 160)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addComponent(jTextField2)
+                                                        .addComponent(clientAddress)
                                                         .addComponent(jTextField4)
                                                         .addComponent(jTextField6)
                                                         .addComponent(jTextField8))
@@ -78,8 +85,8 @@ public class addBoutiquePanel extends javax.swing.JPanel {
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(clientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(clientAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(36, 36, 36)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -96,11 +103,14 @@ public class addBoutiquePanel extends javax.swing.JPanel {
                                 .addComponent(jButton1)
                                 .addContainerGap(25, Short.MAX_VALUE))
         );
+        this.add(addBoutiquePanel);
     }
+    
+    
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField clientName;
+    private javax.swing.JTextField clientAddress;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
