@@ -40,12 +40,12 @@ public class MeaghanPaigeInventorySystem {
             System.out.println("connected");
             statement = connection.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM CLIENT");
-            System.out.println("CLIENT ID\t\tName\t\t\tAddress\t\t\t\t\tCity");
-            System.out.println("==\t\t\t================\t===\t=======");
+            System.out.println("CLIENT ID\t\tName\t\tAddress\t\t\t\tCity");
+            System.out.println("==\t\t================\t===\t\t\t=======");
             while (resultSet.next()) {
                 System.out.println(resultSet.getInt(1) + "\t\t\t"
-                        + resultSet.getString(2) + "\t\t"
-                        + resultSet.getString(3) + "\t"
+                        + resultSet.getString(2) + "\t\t\t"
+                        + resultSet.getString(3) + "\t\t"
                         + resultSet.getString(4));
             }
         } catch (SQLException sqlex) {
