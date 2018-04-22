@@ -29,19 +29,10 @@ public class WelcomePanel extends javax.swing.JPanel {
         createReportButton = new javax.swing.JButton();
         addBoutiqueButton = new javax.swing.JButton();
         
-        //TODO -- Create working panel in the same window
-        JPanel addBoutiquePanel = new JPanel();
-        addBoutiquePanel.setAlignmentX(RIGHT_ALIGNMENT);
-        JLabel testLabel = new JLabel("test new panel label");
-        addBoutiquePanel.add(testLabel);
-        
         addBoutiqueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("add client test");
-                
-                //TODO -- Display working panel in the same window when button is pressed
-                addBoutiquePanel.setVisible(true);
             }
         });
 
