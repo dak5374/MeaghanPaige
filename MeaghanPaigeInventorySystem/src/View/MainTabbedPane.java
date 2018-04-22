@@ -24,7 +24,6 @@ public class MainTabbedPane extends JFrame {
     JTabbedPane mainTabbedPane = new JTabbedPane();
 
     public MainTabbedPane() {
-        ;
 
         mainTabbedPane.add("Welcome Panel", welcomePanel);
         mainTabbedPane.add("Import Panel", importPanel);
@@ -44,7 +43,7 @@ public class MainTabbedPane extends JFrame {
         try {
 
             String msAccDB = "IST440MeaghanPaige.accdb";
-            String dbURL = "jdbc:ucanaccess://src/Control/" + msAccDB;
+            String dbURL = "jdbc:ucanaccess://src/meaghanpaigeinventorysystem/" + msAccDB;
             connection = DriverManager.getConnection(dbURL);
 //            statement = connection.createStatement();
 //            resultSet = statement.executeQuery("SELECT * FROM CLIENT");
