@@ -45,6 +45,8 @@ public class MainTabbedPane extends JFrame {
             String msAccDB = "IST440MeaghanPaige.accdb";
             String dbURL = "jdbc:ucanaccess://src/meaghanpaigeinventorysystem/" + msAccDB;
             connection = DriverManager.getConnection(dbURL);
+            
+              //Test connection
 //            statement = connection.createStatement();
 //            resultSet = statement.executeQuery("SELECT * FROM CLIENT");
 //            System.out.println("CLIENT ID\t\tName\t\tAddress\t\t\t\tCity");
