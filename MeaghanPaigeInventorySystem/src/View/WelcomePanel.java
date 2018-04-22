@@ -5,6 +5,7 @@
  */
 package View;
 
+import static java.awt.Component.RIGHT_ALIGNMENT;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -24,15 +25,21 @@ public class WelcomePanel extends javax.swing.JPanel {
     }
 
     private void initComponents() {
-        addBoutiquePanel aBP = new addBoutiquePanel();
         welcomeLabel = new javax.swing.JLabel();
         createReportButton = new javax.swing.JButton();
         addBoutiqueButton = new javax.swing.JButton();
+        
+        //Panel test
+        JPanel addBoutiquePanel = new JPanel();
+        addBoutiquePanel.setAlignmentX(RIGHT_ALIGNMENT);
+        JLabel testLabel = new JLabel("test label");
+        addBoutiquePanel.add(testLabel);
+        addBoutiquePanel.setVisible(true);
+        
         addBoutiqueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("add client test");
-                aBP.setVisible(true);
             }
         });
 
@@ -43,6 +50,7 @@ public class WelcomePanel extends javax.swing.JPanel {
         createReportButton.setToolTipText("Creates an updated report from the database.");
 
         addBoutiqueButton.setText("Add Boutique");
+        
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -67,6 +75,7 @@ public class WelcomePanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addBoutiqueButton)
                         .addContainerGap(279, Short.MAX_VALUE))
+                
         );
     }
 }
