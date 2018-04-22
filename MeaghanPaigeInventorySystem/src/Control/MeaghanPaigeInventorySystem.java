@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
-import View.addBoutiquePanel;
+import View.ClientPanel;
 
 public class MeaghanPaigeInventorySystem {
 

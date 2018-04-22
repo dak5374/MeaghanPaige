@@ -5,19 +5,15 @@
  */
 package View;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 /**
  *
  * @author usmck
  */
-public class addBoutiquePanel extends javax.swing.JFrame {
+public class ClientPanel extends javax.swing.JPanel {
 
-    public addBoutiquePanel() {
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setSize(600, 400);
-        JPanel addBoutiquePanel = new JPanel();
+    public ClientPanel() {
+
         jLabel1 = new javax.swing.JLabel();
         clientName = new javax.swing.JTextField();
         clientAddress = new javax.swing.JTextField();
@@ -51,8 +47,8 @@ public class addBoutiquePanel extends javax.swing.JFrame {
 
         jButton1.setText("Add Client");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(addBoutiquePanel);
-        addBoutiquePanel.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -103,7 +99,6 @@ public class addBoutiquePanel extends javax.swing.JFrame {
                                 .addComponent(jButton1)
                                 .addContainerGap(25, Short.MAX_VALUE))
         );
-        this.add(addBoutiquePanel);
     }
     
     
