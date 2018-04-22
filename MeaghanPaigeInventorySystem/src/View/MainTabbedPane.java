@@ -13,6 +13,8 @@ import java.sql.Statement;
 import javax.swing.*;
 
 public class MainTabbedPane extends JFrame {
+    
+    WelcomePanel wp;
 
     Connection connection = null;
     Statement statement = null;
