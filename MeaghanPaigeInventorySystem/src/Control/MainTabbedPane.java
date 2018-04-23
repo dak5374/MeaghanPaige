@@ -9,6 +9,7 @@ import View.ImportPanel;
 import View.InventoryPanel;
 import View.WelcomePanel;
 import View.ClientPanel;
+import View.CustomerPanel;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -27,6 +28,7 @@ public class MainTabbedPane extends JFrame {
     ImportPanel importPanel = new ImportPanel();
     InventoryPanel inventoryPanel = new InventoryPanel();
     ClientPanel boutiquePanel = new ClientPanel();
+    CustomerPanel customerPanel = new CustomerPanel();
 
     JTabbedPane mainTabbedPane = new JTabbedPane();
 
@@ -36,6 +38,7 @@ public class MainTabbedPane extends JFrame {
         mainTabbedPane.add("Import Panel", importPanel);
         mainTabbedPane.add("Inventory Panel", inventoryPanel);
         mainTabbedPane.add("Client Panel", boutiquePanel);
+        mainTabbedPane.add("Customer Panel", customerPanel);
                 
         add(mainTabbedPane);
         
