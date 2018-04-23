@@ -101,7 +101,6 @@ public class ClientPanel extends javax.swing.JPanel {
         );
     }
     
-    
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField clientName;
