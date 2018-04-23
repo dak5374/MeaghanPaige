@@ -5,47 +5,56 @@
  */
 package View;
 
-
 /**
  *
  * @author usmck
  */
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JLabel;
+import meaghanpaigeinventorysystem.Client;
+import java.util.Date;
+
 public class ClientPanel extends javax.swing.JPanel {
+
+    Date today = new Date();
 
     public ClientPanel() {
 
-        jLabel1 = new javax.swing.JLabel();
-        clientName = new javax.swing.JTextField();
-        clientAddress = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        
+        addClientLabel = new javax.swing.JLabel();
+        clientNameText = new javax.swing.JTextField();
+        clientAddressText = new javax.swing.JTextField();
+        clientCityText = new javax.swing.JTextField();
+        clientStateText = new javax.swing.JTextField();
+        clientZipText = new javax.swing.JTextField();
+        clientPhoneText = new javax.swing.JTextField();
+        clientFaxText = new javax.swing.JTextField();
+        clientEmailText = new javax.swing.JTextField();
+        addClientButton = new javax.swing.JButton();
+        warningLabel = new javax.swing.JLabel();
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Add Client");
+        addClientLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        addClientLabel.setText("Add Client");
 
-        clientName.setText("Client Name");
+        clientNameText.setText("Client Name");
 
-        clientAddress.setText("Client Address");
+        clientAddressText.setText("Client Address");
 
-        jTextField3.setText("Client City");
+        clientCityText.setText("Client City");
 
-        jTextField4.setText("Client State");
+        clientStateText.setText("Client State");
 
-        jTextField5.setText("Client ZipCode");
+        clientZipText.setText("Client ZipCode");
 
-        jTextField6.setText("Client Phone Number");
+        clientPhoneText.setText("Client Phone");
 
-        jTextField7.setText("Client Fax Number");
+        clientFaxText.setText("Client Fax");
 
-        jTextField8.setText("Client Email");
+        clientEmailText.setText("Client Email");
 
-        jButton1.setText("Add Client");
+        addClientButton.setText("Add Client");
+
+        warningLabel.setText("Please Complete All Fields");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -54,62 +63,76 @@ public class ClientPanel extends javax.swing.JPanel {
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(addClientLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addComponent(jTextField7)
-                                                        .addComponent(clientName)
-                                                        .addComponent(jTextField3)
-                                                        .addComponent(jTextField5))
+                                                        .addComponent(clientFaxText)
+                                                        .addComponent(clientNameText)
+                                                        .addComponent(clientCityText)
+                                                        .addComponent(clientZipText)
+                                                        .addComponent(warningLabel))
                                                 .addGap(160, 160, 160)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addComponent(clientAddress)
-                                                        .addComponent(jTextField4)
-                                                        .addComponent(jTextField6)
-                                                        .addComponent(jTextField8))
+                                                        .addComponent(clientAddressText)
+                                                        .addComponent(clientStateText)
+                                                        .addComponent(clientPhoneText)
+                                                        .addComponent(clientEmailText)
+                                                        .addComponent(addClientLabel))
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap())
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(166, 166, 166)
-                                .addComponent(jButton1)
+                                .addComponent(addClientButton)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel1)
+                                .addGap(36, 36, 36)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(addClientLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(clientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(clientAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(clientNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(clientAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(36, 36, 36)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(clientCityText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(clientStateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(36, 36, 36)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(clientZipText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(clientPhoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(36, 36, 36)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(clientFaxText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(clientEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
+                                .addComponent(addClientButton)
                                 .addContainerGap(25, Short.MAX_VALUE))
         );
     }
-    
-    
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField clientName;
-    private javax.swing.JTextField clientAddress;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+
+    private Client importClient() {
+        
+        Client client = new Client(clientNameText.getText(), clientAddressText.getText(), clientCityText.getText(), clientStateText.getText(), 
+                Integer.parseInt(clientZipText.getText()), Integer.parseInt(clientPhoneText.getText()), Integer.parseInt(clientFaxText.getText()), 
+                clientEmailText.getText(), today, "Active");
+        return client;
+
+    }
+
+    private javax.swing.JButton addClientButton;
+    private javax.swing.JLabel addClientLabel;
+    private javax.swing.JTextField clientNameText;
+    private javax.swing.JTextField clientAddressText;
+    private javax.swing.JTextField clientCityText;
+    private javax.swing.JTextField clientStateText;
+    private javax.swing.JTextField clientZipText;
+    private javax.swing.JTextField clientPhoneText;
+    private javax.swing.JTextField clientFaxText;
+    private javax.swing.JTextField clientEmailText;
+    private javax.swing.JLabel warningLabel;
 }

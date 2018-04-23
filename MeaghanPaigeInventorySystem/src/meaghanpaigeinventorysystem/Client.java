@@ -3,40 +3,36 @@ package meaghanpaigeinventorysystem;
 import java.util.Date;
 
 public class Client {
-    
+
     //Global variables
-    private int clientID;
     private String clientName;
     private int clientPhone;
     private int clientFax;
+    private int clientZip;
     private String clientEmail;
     private Date clientMembershipDate;
     private String clientMemberStatus;
-    
+    private String clientAddress;
+    private String clientState;
+    private String clientCity;
+
+
     //Constructor
-    void Client(int id, String name, int phone, int fax, String email, 
-                Date membershipDate, String membershipStatus) {
-        this.setClientID(id);
+    public Client(String name, String address, String city, String state, int zip,
+            int phone, int fax, String email,
+            Date membershipDate, String membershipStatus) {
+
         this.setClientName(name);
+        this.setClientAddress(address);
+        this.setClientCity(city);
+        this.setClientState(state); 
+        this.setClientZip(zip);
         this.setClientPhone(phone);
         this.setClientFax(fax);
         this.setClientEmail(email);
         this.setClientMembershipDate(membershipDate);
         this.setClientMemberStatus(membershipStatus);
-    }
 
-    /**
-     * @return the clientID
-     */
-    public int getClientID() {
-        return clientID;
-    }
-
-    /**
-     * @param clientID the clientID to set
-     */
-    public void setClientID(int clientID) {
-        this.clientID = clientID;
     }
 
     /**
@@ -51,6 +47,62 @@ public class Client {
      */
     public void setClientName(String clientName) {
         this.clientName = clientName;
+    }
+
+    /**
+     * @return the clientAddress
+     */
+    public String getClientAddress() {
+        return clientAddress;
+    }
+
+    /**
+     * @param clientAddress the clientAddress to set
+     */
+    public void setClientAddress(String clientAddress) {
+        this.clientAddress = clientAddress;
+    }
+
+    /**
+     * @return the clientCity
+     */
+    public String getClientCity() {
+        return clientCity;
+    }
+
+    /**
+     * @param clientCity the clientCity to set
+     */
+    public void setClientCity(String clientCity) {
+        this.clientCity = clientCity;
+    }
+
+    /**
+     * @return the clientState
+     */
+    public String getClientState() {
+        return clientState;
+    }
+
+    /**
+     * @param clientState the clientState to set
+     */
+    public void setClientState(String clientState) {
+        this.clientState = clientState;
+    }
+
+    /**
+     * @return the clientZip
+     */
+    public int getClientZip() {
+        return clientZip;
+    }
+
+    /**
+     * @param clientZip the clientZip to set
+     */
+    public void setClientZip(int clientZip) {
+        this.clientZip = clientZip;
     }
 
     /**
@@ -121,6 +173,6 @@ public class Client {
      */
     public void setClientMemberStatus(String clientMemberStatus) {
         this.clientMemberStatus = clientMemberStatus;
-    } 
-    
+    }
+
 }//End class

@@ -31,14 +31,15 @@ public class MainTabbedPane extends JFrame {
     JTabbedPane mainTabbedPane = new JTabbedPane();
 
     public MainTabbedPane() {
-
+        
         mainTabbedPane.add("Welcome Panel", welcomePanel);
         mainTabbedPane.add("Import Panel", importPanel);
         mainTabbedPane.add("Inventory Panel", inventoryPanel);
         mainTabbedPane.add("Client Panel", boutiquePanel);
                 
         add(mainTabbedPane);
-
+        
+        
         try {
 
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
