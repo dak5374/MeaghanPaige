@@ -9,7 +9,7 @@ public class Customer {
     private String customerEmail;
     
     //Constructor
-    void Customer(int id, String name, int phone, String email){
+    public Customer(int id, String name, int phone, String email){
         this.setCustomerID(id);
         this.setCustomerName(name);
         this.setCustomerPhone(phone);
