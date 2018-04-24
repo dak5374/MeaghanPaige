@@ -9,7 +9,7 @@ public class Address {
     private String addressStreet;
     
     //Constructor
-    void Address(String city, String state, int zip, String street){
+    public Address(String city, String state, int zip, String street){
         this.setAddressCity(city);
         this.setAddressState(state);
         this.setAddressZip(zip);
