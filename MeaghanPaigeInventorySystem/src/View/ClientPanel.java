@@ -115,7 +115,7 @@ public class ClientPanel extends javax.swing.JPanel {
         );
     }
 
-    private Client importClient() {
+    public Client importClient() {
         
         Client client = new Client(clientNameText.getText(), clientAddressText.getText(), clientCityText.getText(), clientStateText.getText(), 
                 Integer.parseInt(clientZipText.getText()), Integer.parseInt(clientPhoneText.getText()), Integer.parseInt(clientFaxText.getText()), 
@@ -123,7 +123,10 @@ public class ClientPanel extends javax.swing.JPanel {
         return client;
 
     }
-
+    
+    public javax.swing.JButton getAddClientButton() {
+        return addClientButton;
+    }
     private javax.swing.JButton addClientButton;
     private javax.swing.JLabel addClientLabel;
     private javax.swing.JTextField clientNameText;

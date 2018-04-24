@@ -10,6 +10,8 @@ import View.InventoryPanel;
 import View.WelcomePanel;
 import View.ClientPanel;
 import View.CustomerPanel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -27,7 +29,7 @@ public class MainTabbedPane extends JFrame {
     WelcomePanel welcomePanel = new WelcomePanel();
     ImportPanel importPanel = new ImportPanel();
     InventoryPanel inventoryPanel = new InventoryPanel();
-    ClientPanel boutiquePanel = new ClientPanel();
+    ClientPanel clientPanel = new ClientPanel();
     CustomerPanel customerPanel = new CustomerPanel();
 
     JTabbedPane mainTabbedPane = new JTabbedPane();
@@ -37,12 +39,19 @@ public class MainTabbedPane extends JFrame {
         mainTabbedPane.add("Welcome Panel", welcomePanel);
         mainTabbedPane.add("Import Panel", importPanel);
         mainTabbedPane.add("Inventory Panel", inventoryPanel);
-        mainTabbedPane.add("Client Panel", boutiquePanel);
+        mainTabbedPane.add("Client Panel", clientPanel);
         mainTabbedPane.add("Customer Panel", customerPanel);
                 
         add(mainTabbedPane);
         
-        
+        clientPanel.getAddClientButton().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                //clientPanel.importClient();
+                
+            }
+        });
         try {
 
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -58,6 +67,7 @@ public class MainTabbedPane extends JFrame {
             String msAccDB = "IST440MeaghanPaige.accdb";
             String dbURL = "jdbc:ucanaccess://src/meaghanpaigeinventorysystem/" + msAccDB;
             connection = DriverManager.getConnection(dbURL);
+            
             
               //Test connection
 //            statement = connection.createStatement();
