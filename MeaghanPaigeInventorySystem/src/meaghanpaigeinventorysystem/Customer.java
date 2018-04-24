@@ -1,33 +1,35 @@
 package meaghanpaigeinventorysystem;
 
+import java.util.Date;
+
 public class Customer {
     
     //Global variables
-    private int customerID;
     private String customerName;
     private int customerPhone;
-    private String customerEmail;
+    private int customerFax;
+    private int customerZip;
+    private String customertEmail;
+    private Date customerMembershipDate;
+    private String customerMemberStatus;
+    private String customerAddress;
+    private String customerState;
+    private String customerCity;
     
     //Constructor
-    public Customer(int id, String name, int phone, String email){
-        this.setCustomerID(id);
+    public Customer(String name, String address, String city, String state, int zip,
+            int phone, int fax, String email,
+            Date membershipDate, String membershipStatus){
         this.setCustomerName(name);
+        this.setCustomerAddress(address);
+        this.setCustomerCity(city);
+        this.setCustomerState(state); 
+        this.setCustomerZip(zip);
         this.setCustomerPhone(phone);
-        this.setCustomerEmail(email);        
-    }
-
-    /**
-     * @return the customerID
-     */
-    public int getCustomerID() {
-        return customerID;
-    }
-
-    /**
-     * @param customerID the customerID to set
-     */
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+        this.setCustomerFax(fax);
+        this.setCustomerEmail(email);
+        this.setCustomerMembershipDate(membershipDate);
+        this.setCustomerMemberStatus(membershipStatus);      
     }
 
     /**
@@ -59,17 +61,118 @@ public class Customer {
     }
 
     /**
-     * @return the customerEmail
+     * @return the customerFax
      */
-    public String getCustomerEmail() {
-        return customerEmail;
+    public int getCustomerFax() {
+        return customerFax;
     }
 
     /**
-     * @param customerEmail the customerEmail to set
+     * @param customerFax the customerFax to set
      */
-    public void setCustomerEmail(String customerEmail) {
-        this.customerEmail = customerEmail;
+    public void setCustomerFax(int customerFax) {
+        this.customerFax = customerFax;
     }
+
+    /**
+     * @return the customerZip
+     */
+    public int getCustomerZip() {
+        return customerZip;
+    }
+
+    /**
+     * @param customerZip the customerZip to set
+     */
+    public void setCustomerZip(int customerZip) {
+        this.customerZip = customerZip;
+    }
+
+    /**
+     * @return the customertEmail
+     */
+    public String getCustomertEmail() {
+        return customertEmail;
+    }
+
+    /**
+     * @param customertEmail the customertEmail to set
+     */
+    public void setCustomerEmail(String customertEmail) {
+        this.customertEmail = customertEmail;
+    }
+
+    /**
+     * @return the customerMembershipDate
+     */
+    public Date getCustomerMembershipDate() {
+        return customerMembershipDate;
+    }
+
+    /**
+     * @param customerMembershipDate the customerMembershipDate to set
+     */
+    public void setCustomerMembershipDate(Date customerMembershipDate) {
+        this.customerMembershipDate = customerMembershipDate;
+    }
+
+    /**
+     * @return the customerMemberStatus
+     */
+    public String getCustomerMemberStatus() {
+        return customerMemberStatus;
+    }
+
+    /**
+     * @param customerMemberStatus the customerMemberStatus to set
+     */
+    public void setCustomerMemberStatus(String customerMemberStatus) {
+        this.customerMemberStatus = customerMemberStatus;
+    }
+
+    /**
+     * @return the customerAddress
+     */
+    public String getCustomerAddress() {
+        return customerAddress;
+    }
+
+    /**
+     * @param customerAddress the customerAddress to set
+     */
+    public void setCustomerAddress(String customerAddress) {
+        this.customerAddress = customerAddress;
+    }
+
+    /**
+     * @return the customerState
+     */
+    public String getCustomerState() {
+        return customerState;
+    }
+
+    /**
+     * @param customerState the customerState to set
+     */
+    public void setCustomerState(String customerState) {
+        this.customerState = customerState;
+    }
+
+    /**
+     * @return the customerCity
+     */
+    public String getCustomerCity() {
+        return customerCity;
+    }
+
+    /**
+     * @param customerCity the customerCity to set
+     */
+    public void setCustomerCity(String customerCity) {
+        this.customerCity = customerCity;
+    }
+
+   
+   
  
 }//End Class
