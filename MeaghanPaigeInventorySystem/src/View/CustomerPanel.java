@@ -25,23 +25,14 @@ public class CustomerPanel extends javax.swing.JPanel {
 
         lblAddCustomer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAddCustomer.setText("Add Customer");
-
         tboxCustomerName.setText("Customer Name");
-
         tboxCustomerAddress.setText("Customer Address");
-
         tboxCustomerCity.setText("Customer City");
-
         tboxCustomerState.setText("Customer State");
-
         tboxCustomerZip.setText("Customer ZipCode");
-
         tboxCustomerPhone.setText("Customer Phone Number");
-
         tboxCustomerFax.setText("Customer Fax Number");
-
         tboxCustomerEmail.setText("Customer Email");
-
         btnAddCustomer.setText("Add Customer");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -96,8 +87,32 @@ public class CustomerPanel extends javax.swing.JPanel {
                                 .addComponent(btnAddCustomer)
                                 .addContainerGap(25, Short.MAX_VALUE))
         );
+        
+        //Event handler
+        btnAddCustomer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                //Create Customer object
+                //Customer customer = new Customer(Customer arguments here, here, here, and here);
+                
+                //Create Address object
+                //Address address = new Address(Address arguments here, here, here, and here);
+                
+                //Ask database to accept the object arguments as input to store respectively 
+                
+                /* 
+                If we create the customer object using the Customer ID, we can also assign the address an address ID 
+                so we can link the two objects together
+                
+                Did you want to do that or create customer and client objects with 
+                addresses as part of their arguments? If that is the case, we would need to 
+                restructure the data layer objects and completely do away with the address object and class
+                */
+        }
+            });
+        
     }
-    
     private javax.swing.JButton btnAddCustomer;
     private javax.swing.JLabel lblAddCustomer;
     private javax.swing.JTextField tboxCustomerName;
