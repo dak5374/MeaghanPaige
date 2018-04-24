@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class CustomerPanel extends javax.swing.JPanel {
 
     public CustomerPanel() {
@@ -17,7 +20,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         tboxCustomerPhone = new javax.swing.JTextField();
         tboxCustomerFax = new javax.swing.JTextField();
         tboxCustomerEmail = new javax.swing.JTextField();
-        btnAddClient = new javax.swing.JButton();
+        btnAddCustomer = new javax.swing.JButton();
         
 
         lblAddCustomer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -39,7 +42,7 @@ public class CustomerPanel extends javax.swing.JPanel {
 
         tboxCustomerEmail.setText("Customer Email");
 
-        btnAddClient.setText("Add Customer");
+        btnAddCustomer.setText("Add Customer");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -65,7 +68,7 @@ public class CustomerPanel extends javax.swing.JPanel {
                                 .addContainerGap())
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(166, 166, 166)
-                                .addComponent(btnAddClient)
+                                .addComponent(btnAddCustomer)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -90,12 +93,12 @@ public class CustomerPanel extends javax.swing.JPanel {
                                         .addComponent(tboxCustomerFax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(tboxCustomerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAddClient)
+                                .addComponent(btnAddCustomer)
                                 .addContainerGap(25, Short.MAX_VALUE))
         );
     }
     
-    private javax.swing.JButton btnAddClient;
+    private javax.swing.JButton btnAddCustomer;
     private javax.swing.JLabel lblAddCustomer;
     private javax.swing.JTextField tboxCustomerName;
     private javax.swing.JTextField tboxCustomerAddress;
@@ -105,4 +108,5 @@ public class CustomerPanel extends javax.swing.JPanel {
     private javax.swing.JTextField tboxCustomerPhone;
     private javax.swing.JTextField tboxCustomerFax;
     private javax.swing.JTextField tboxCustomerEmail;
+    
 }
