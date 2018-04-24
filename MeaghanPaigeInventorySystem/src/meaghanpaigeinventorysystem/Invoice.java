@@ -15,7 +15,7 @@ public class Invoice {
     private double invoiceAmountDue;
     
     //Constructor
-    void Invoice (int id, Date date, String name, String description, double discount,
+    public Invoice (int id, Date date, String name, String description, double discount,
                 double tax, String paymentType, double amountDue){
         this.setInvoiceID(id);
         this.setInvoiceDate(date);
