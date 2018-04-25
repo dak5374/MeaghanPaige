@@ -1,32 +1,29 @@
 package meaghanpaigeinventorysystem;
 
 import java.util.Date;
-
+import meaghanpaigeinventorysystem.Address;
 public class Client {
 
     //Global variables
     private String clientName;
     private int clientPhone;
     private int clientFax;
-    private int clientZip;
     private String clientEmail;
     private Date clientMembershipDate;
     private String clientMemberStatus;
-    private String clientAddress;
-    private String clientState;
-    private String clientCity;
+    private Address clientAddress;
+
+    
 
 
     //Constructor
-    public Client(String name, String address, String city, String state, int zip,
+    public Client(String name, Address address,
             int phone, int fax, String email,
             Date membershipDate, String membershipStatus) {
 
         this.setClientName(name);
         this.setClientAddress(address);
-        this.setClientCity(city);
-        this.setClientState(state); 
-        this.setClientZip(zip);
+
         this.setClientPhone(phone);
         this.setClientFax(fax);
         this.setClientEmail(email);
@@ -52,57 +49,15 @@ public class Client {
     /**
      * @return the clientAddress
      */
-    public String getClientAddress() {
+    public Address getClientAddress() {
         return clientAddress;
     }
 
     /**
      * @param clientAddress the clientAddress to set
      */
-    public void setClientAddress(String clientAddress) {
+    public void setClientAddress(Address clientAddress) {
         this.clientAddress = clientAddress;
-    }
-
-    /**
-     * @return the clientCity
-     */
-    public String getClientCity() {
-        return clientCity;
-    }
-
-    /**
-     * @param clientCity the clientCity to set
-     */
-    public void setClientCity(String clientCity) {
-        this.clientCity = clientCity;
-    }
-
-    /**
-     * @return the clientState
-     */
-    public String getClientState() {
-        return clientState;
-    }
-
-    /**
-     * @param clientState the clientState to set
-     */
-    public void setClientState(String clientState) {
-        this.clientState = clientState;
-    }
-
-    /**
-     * @return the clientZip
-     */
-    public int getClientZip() {
-        return clientZip;
-    }
-
-    /**
-     * @param clientZip the clientZip to set
-     */
-    public void setClientZip(int clientZip) {
-        this.clientZip = clientZip;
     }
 
     /**

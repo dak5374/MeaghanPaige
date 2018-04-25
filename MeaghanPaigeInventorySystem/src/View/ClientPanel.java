@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import meaghanpaigeinventorysystem.Client;
 import java.util.Date;
+import meaghanpaigeinventorysystem.Address;
 
 public class ClientPanel extends javax.swing.JPanel {
 
@@ -117,8 +118,8 @@ public class ClientPanel extends javax.swing.JPanel {
 
     public Client importClient() {
         
-        Client client = new Client(clientNameText.getText(), clientAddressText.getText(), clientCityText.getText(), clientStateText.getText(), 
-                Integer.parseInt(clientZipText.getText()), Integer.parseInt(clientPhoneText.getText()), Integer.parseInt(clientFaxText.getText()), 
+        Client client = new Client(clientNameText.getText(), new Address(clientCityText.getText(), clientStateText.getText(), 
+                Integer.parseInt(clientZipText.getText()), clientAddressText.getText()), Integer.parseInt(clientPhoneText.getText()), Integer.parseInt(clientFaxText.getText()), 
                 clientEmailText.getText(), today, "Active");
         return client;
 
