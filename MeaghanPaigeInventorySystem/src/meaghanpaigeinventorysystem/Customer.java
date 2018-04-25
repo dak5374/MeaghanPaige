@@ -11,10 +11,10 @@ public class Customer {
     private String customertEmail;
     private Date customerMembershipDate;
     private String customerMemberStatus;
-    private String customerAddress;
+    private Address customerAddress;
     
     //Constructor
-    public Customer(String name, String address, int phone, int fax, 
+    public Customer(String name, Address address, int phone, int fax, 
             String email, Date membershipDate, String membershipStatus){
         this.setCustomerName(name);
         this.setCustomerAddress(address);
@@ -112,14 +112,14 @@ public class Customer {
     /**
      * @return the customerAddress
      */
-    public String getCustomerAddress() {
+    public Address getCustomerAddress() {
         return customerAddress;
     }
 
     /**
      * @param customerAddress the customerAddress to set
      */
-    public void setCustomerAddress(String customerAddress) {
+    public void setCustomerAddress(Address customerAddress) {
         this.customerAddress = customerAddress;
     }
  
