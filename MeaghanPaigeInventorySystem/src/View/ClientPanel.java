@@ -40,15 +40,15 @@ public class ClientPanel extends javax.swing.JPanel {
         clientNameText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (clientNameText.getText().equals("Client Name")) {
-                    clientNameText.setText("");
+                if (getClientNameText().getText().equals("Client Name")) {
+                    getClientNameText().setText("");
                 }
             }
 
             @Override
             public void focusLost(FocusEvent fe) {
-                if (clientNameText.getText().equals("")) {
-                    clientNameText.setText("Client Name");
+                if (getClientNameText().getText().equals("")) {
+                    getClientNameText().setText("Client Name");
                 }
             }
         });
@@ -57,15 +57,15 @@ public class ClientPanel extends javax.swing.JPanel {
         clientAddressText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (clientAddressText.getText().equals("Client Address")) {
-                    clientAddressText.setText("");
+                if (getClientAddressText().getText().equals("Client Address")) {
+                    getClientAddressText().setText("");
                 }
             }
 
             @Override
             public void focusLost(FocusEvent fe) {
-                if (clientAddressText.getText().equals("")) {
-                    clientAddressText.setText("Client Address");
+                if (getClientAddressText().getText().equals("")) {
+                    getClientAddressText().setText("Client Address");
                 }
             }
         });
@@ -74,15 +74,15 @@ public class ClientPanel extends javax.swing.JPanel {
         clientCityText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (clientCityText.getText().equals("Client City")) {
-                    clientCityText.setText("");
+                if (getClientCityText().getText().equals("Client City")) {
+                    getClientCityText().setText("");
                 }
             }
 
             @Override
             public void focusLost(FocusEvent fe) {
-                if (clientCityText.getText().equals("")) {
-                    clientCityText.setText("Client City");
+                if (getClientCityText().getText().equals("")) {
+                    getClientCityText().setText("Client City");
                 }
             }
         });
@@ -91,15 +91,15 @@ public class ClientPanel extends javax.swing.JPanel {
         clientStateText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (clientStateText.getText().equals("Client State")) {
-                    clientStateText.setText("");
+                if (getClientStateText().getText().equals("Client State")) {
+                    getClientStateText().setText("");
                 }
             }
 
             @Override
             public void focusLost(FocusEvent fe) {
-                if (clientStateText.getText().equals("")) {
-                    clientStateText.setText("Client State");
+                if (getClientStateText().getText().equals("")) {
+                    getClientStateText().setText("Client State");
                 }
             }
         });
@@ -108,15 +108,15 @@ public class ClientPanel extends javax.swing.JPanel {
         clientZipText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (clientZipText.getText().equals("Client ZipCode")) {
-                    clientZipText.setText("");
+                if (getClientZipText().getText().equals("Client ZipCode")) {
+                    getClientZipText().setText("");
                 }
             }
 
             @Override
             public void focusLost(FocusEvent fe) {
-                if (clientZipText.getText().equals("")) {
-                    clientZipText.setText("Client ZipCode");
+                if (getClientZipText().getText().equals("")) {
+                    getClientZipText().setText("Client ZipCode");
                 }
             }
         });
@@ -130,15 +130,15 @@ public class ClientPanel extends javax.swing.JPanel {
         clientPhoneText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (clientPhoneText.getText().equals("Client Phone")) {
-                    clientPhoneText.setText("");
+                if (getClientPhoneText().getText().equals("Client Phone")) {
+                    getClientPhoneText().setText("");
                 }
             }
 
             @Override
             public void focusLost(FocusEvent fe) {
-                if (clientPhoneText.getText().equals("")) {
-                    clientPhoneText.setText("Client Phone");
+                if (getClientPhoneText().getText().equals("")) {
+                    getClientPhoneText().setText("Client Phone");
                 }
             }
         });
@@ -152,15 +152,15 @@ public class ClientPanel extends javax.swing.JPanel {
         clientFaxText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (clientFaxText.getText().equals("Client Fax")) {
-                    clientFaxText.setText("");
+                if (getClientFaxText().getText().equals("Client Fax")) {
+                    getClientFaxText().setText("");
                 }
             }
 
             @Override
             public void focusLost(FocusEvent fe) {
-                if (clientFaxText.getText().equals("")) {
-                    clientFaxText.setText("Client Fax");
+                if (getClientFaxText().getText().equals("")) {
+                    getClientFaxText().setText("Client Fax");
                 }
             }
         });
@@ -174,15 +174,15 @@ public class ClientPanel extends javax.swing.JPanel {
         clientEmailText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (clientEmailText.getText().equals("Client Email")) {
-                    clientEmailText.setText("");
+                if (getClientEmailText().getText().equals("Client Email")) {
+                    getClientEmailText().setText("");
                 }
             }
 
             @Override
             public void focusLost(FocusEvent fe) {
-                if (clientEmailText.getText().equals("")) {
-                    clientEmailText.setText("Client Email");
+                if (getClientEmailText().getText().equals("")) {
+                    getClientEmailText().setText("Client Email");
                 }
             }
         });
@@ -250,10 +250,10 @@ public class ClientPanel extends javax.swing.JPanel {
     }
 
     public Client importClient() {
-      //  if ()
-        Client client = new Client(clientNameText.getText(), new Address(clientCityText.getText(), clientStateText.getText(),
-                Long.parseLong(clientZipText.getText()), clientAddressText.getText()), Long.parseLong(clientPhoneText.getText()), Long.parseLong(clientFaxText.getText()),
-                clientEmailText.getText(), "Active");
+
+        Client client = new Client(getClientNameText().getText(), new Address(getClientCityText().getText(), getClientStateText().getText(),
+                Long.parseLong(getClientZipText().getText()), getClientAddressText().getText()), Long.parseLong(getClientPhoneText().getText()), 
+                Long.parseLong(getClientFaxText().getText()), getClientEmailText().getText(), "Active");
         return client;
 
     }
@@ -273,6 +273,118 @@ public class ClientPanel extends javax.swing.JPanel {
 //    private void 
     public javax.swing.JButton getAddClientButton() {
         return addClientButton;
+    }
+
+    /**
+     * @return the clientNameText
+     */
+    public javax.swing.JTextField getClientNameText() {
+        return clientNameText;
+    }
+
+    /**
+     * @param clientNameText the clientNameText to set
+     */
+    public void setClientNameText(javax.swing.JTextField clientNameText) {
+        this.clientNameText = clientNameText;
+    }
+
+    /**
+     * @return the clientAddressText
+     */
+    public javax.swing.JTextField getClientAddressText() {
+        return clientAddressText;
+    }
+
+    /**
+     * @param clientAddressText the clientAddressText to set
+     */
+    public void setClientAddressText(javax.swing.JTextField clientAddressText) {
+        this.clientAddressText = clientAddressText;
+    }
+
+    /**
+     * @return the clientCityText
+     */
+    public javax.swing.JTextField getClientCityText() {
+        return clientCityText;
+    }
+
+    /**
+     * @param clientCityText the clientCityText to set
+     */
+    public void setClientCityText(javax.swing.JTextField clientCityText) {
+        this.clientCityText = clientCityText;
+    }
+
+    /**
+     * @return the clientStateText
+     */
+    public javax.swing.JTextField getClientStateText() {
+        return clientStateText;
+    }
+
+    /**
+     * @param clientStateText the clientStateText to set
+     */
+    public void setClientStateText(javax.swing.JTextField clientStateText) {
+        this.clientStateText = clientStateText;
+    }
+
+    /**
+     * @return the clientZipText
+     */
+    public javax.swing.JTextField getClientZipText() {
+        return clientZipText;
+    }
+
+    /**
+     * @param clientZipText the clientZipText to set
+     */
+    public void setClientZipText(javax.swing.JTextField clientZipText) {
+        this.clientZipText = clientZipText;
+    }
+
+    /**
+     * @return the clientPhoneText
+     */
+    public javax.swing.JTextField getClientPhoneText() {
+        return clientPhoneText;
+    }
+
+    /**
+     * @param clientPhoneText the clientPhoneText to set
+     */
+    public void setClientPhoneText(javax.swing.JTextField clientPhoneText) {
+        this.clientPhoneText = clientPhoneText;
+    }
+
+    /**
+     * @return the clientFaxText
+     */
+    public javax.swing.JTextField getClientFaxText() {
+        return clientFaxText;
+    }
+
+    /**
+     * @param clientFaxText the clientFaxText to set
+     */
+    public void setClientFaxText(javax.swing.JTextField clientFaxText) {
+        this.clientFaxText = clientFaxText;
+    }
+
+    /**
+     * @return the clientEmailText
+     */
+    public javax.swing.JTextField getClientEmailText() {
+        return clientEmailText;
+    }
+
+    /**
+     * @param clientEmailText the clientEmailText to set
+     */
+    public void setClientEmailText(javax.swing.JTextField clientEmailText) {
+        this.clientEmailText = clientEmailText;
     }
     private final javax.swing.JButton addClientButton;
     private final javax.swing.JLabel addClientLabel;

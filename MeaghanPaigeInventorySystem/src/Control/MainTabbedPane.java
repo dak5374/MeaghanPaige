@@ -70,6 +70,13 @@ public class MainTabbedPane extends JFrame {
 
                     Statement statement;
                     try {
+                        if (clientPanel.getClientNameText().getText().equals("Client Name") || clientPanel.getClientCityText().getText().equals("ClientCity")
+                                || clientPanel.getClientZipText().getText().equals("Client ZipCode") || clientPanel.getClientStateText().getText().equals("Client State")
+                                || clientPanel.getClientAddressText().getText().equals("Client Address") || clientPanel.getClientPhoneText().getText().equals("Client Phone")
+                                || clientPanel.getClientFaxText().getText().equals("Client Fax") || clientPanel.getClientEmailText().getText().equals("Client Email")) {
+                        clientPanel.getWarningLabel().setForeground(Color.RED);
+                        clientPanel.getWarningLabel().setText("ERROR, Please check all fields and try again!");
+                        } else {
                         Client tempClient = clientPanel.importClient();
                         statement = connection.createStatement();
                         statement.executeUpdate("INSERT INTO Client (ClientName, BusinessAddress, City, State, ZipCode, PhoneNumber, FaxNumber,"
@@ -80,6 +87,7 @@ public class MainTabbedPane extends JFrame {
                                 + tempClient.getClientMemberStatus() + "')");
                         clientPanel.getWarningLabel().setForeground(Color.black);
                         clientPanel.getWarningLabel().setText("Client Added Successfully");
+                        }
                     } catch (SQLException ex) {
                         Logger.getLogger(MainTabbedPane.class.getName()).log(Level.SEVERE, null, ex);
                         ex.printStackTrace();
