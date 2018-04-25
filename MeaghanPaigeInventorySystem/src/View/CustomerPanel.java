@@ -5,9 +5,12 @@
 package View;
 
 import java.util.Date;
+import meaghanpaigeinventorysystem.Address;
 import meaghanpaigeinventorysystem.Customer;
 
 public class CustomerPanel extends javax.swing.JPanel {
+    
+    Date today = new Date();
 
     public CustomerPanel() {
 
@@ -93,11 +96,10 @@ public class CustomerPanel extends javax.swing.JPanel {
         );  
     }
     
-    Date today = new Date();
-    
     public Customer importCustomer() {
-        Customer customer = new Customer(customerNameText.getText(), customerAddressText.getText(), customerCityText.getText(), customerStateText.getText(), 
-                Integer.parseInt(customerZipText.getText()), Integer.parseInt(customerPhoneText.getText()), Integer.parseInt(customerFaxText.getText()), 
+        
+        Customer customer = new Customer(customerNameText.getText(), new Address(customerCityText.getText(), customerStateText.getText(), 
+                Integer.parseInt(customerZipText.getText()), customerAddressText.getText()), Integer.parseInt(customerPhoneText.getText()), Integer.parseInt(customerFaxText.getText()), 
                 customerEmailText.getText(), today, "Active");
         return customer;
     }
