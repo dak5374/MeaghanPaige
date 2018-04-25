@@ -37,6 +37,8 @@ public class CustomerPanel extends javax.swing.JPanel {
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
+        
+        //Horizontal Group
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -62,6 +64,8 @@ public class CustomerPanel extends javax.swing.JPanel {
                                 .addComponent(addCustomerButton)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        
+        //Vertical Group
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -92,7 +96,6 @@ public class CustomerPanel extends javax.swing.JPanel {
     Date today = new Date();
     
     public Customer importCustomer() {
-        
         Customer customer = new Customer(customerNameText.getText(), customerAddressText.getText(), customerCityText.getText(), customerStateText.getText(), 
                 Integer.parseInt(customerZipText.getText()), Integer.parseInt(customerPhoneText.getText()), Integer.parseInt(customerFaxText.getText()), 
                 customerEmailText.getText(), today, "Active");
