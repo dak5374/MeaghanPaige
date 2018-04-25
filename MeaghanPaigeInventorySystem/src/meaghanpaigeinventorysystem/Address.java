@@ -5,11 +5,11 @@ public class Address {
     //Global variables
     private String addressCity;
     private String addressState;
-    private int addressZip;
+    private long addressZip;
     private String addressStreet;
     
     //Constructor
-    public Address(String city, String state, int zip, String street){
+    public Address(String city, String state, long zip, String street){
         this.setAddressCity(city);
         this.setAddressState(state);
         this.setAddressZip(zip);
@@ -47,14 +47,14 @@ public class Address {
     /**
      * @return the addressZip
      */
-    public int getAddressZip() {
+    public long getAddressZip() {
         return addressZip;
     }
 
     /**
      * @param addressZip the addressZip to set
      */
-    public void setAddressZip(int addressZip) {
+    public void setAddressZip(long addressZip) {
         this.addressZip = addressZip;
     }
 

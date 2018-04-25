@@ -9,9 +9,8 @@ package View;
  *
  * @author usmck
  */
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JLabel;
+import java.awt.event.FocusEvent;
+import java.awt.event.KeyEvent;
 import meaghanpaigeinventorysystem.Client;
 import java.util.Date;
 import meaghanpaigeinventorysystem.Address;
@@ -38,21 +37,155 @@ public class ClientPanel extends javax.swing.JPanel {
         addClientLabel.setText("Add Client");
 
         clientNameText.setText("Client Name");
+        clientNameText.addFocusListener(new java.awt.event.FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                if (clientNameText.getText().equals("Client Name")) {
+                    clientNameText.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent fe) {
+                if (clientNameText.getText().equals("")) {
+                    clientNameText.setText("Client Name");
+                }
+            }
+        });
 
         clientAddressText.setText("Client Address");
+        clientAddressText.addFocusListener(new java.awt.event.FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                if (clientAddressText.getText().equals("Client Address")) {
+                    clientAddressText.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent fe) {
+                if (clientAddressText.getText().equals("")) {
+                    clientAddressText.setText("Client Address");
+                }
+            }
+        });
 
         clientCityText.setText("Client City");
+        clientCityText.addFocusListener(new java.awt.event.FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                if (clientCityText.getText().equals("Client City")) {
+                    clientCityText.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent fe) {
+                if (clientCityText.getText().equals("")) {
+                    clientCityText.setText("Client City");
+                }
+            }
+        });
 
         clientStateText.setText("Client State");
+        clientStateText.addFocusListener(new java.awt.event.FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                if (clientStateText.getText().equals("Client State")) {
+                    clientStateText.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent fe) {
+                if (clientStateText.getText().equals("")) {
+                    clientStateText.setText("Client State");
+                }
+            }
+        });
 
         clientZipText.setText("Client ZipCode");
+        clientZipText.addFocusListener(new java.awt.event.FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                if (clientZipText.getText().equals("Client ZipCode")) {
+                    clientZipText.setText("");
+                }
+            }
 
+            @Override
+            public void focusLost(FocusEvent fe) {
+                if (clientZipText.getText().equals("")) {
+                    clientZipText.setText("Client ZipCode");
+                }
+            }
+        });
+        clientZipText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textKeyTyped(evt);
+            }
+        });
+        
         clientPhoneText.setText("Client Phone");
+        clientPhoneText.addFocusListener(new java.awt.event.FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                if (clientPhoneText.getText().equals("Client Phone")) {
+                    clientPhoneText.setText("");
+                }
+            }
 
+            @Override
+            public void focusLost(FocusEvent fe) {
+                if (clientPhoneText.getText().equals("")) {
+                    clientPhoneText.setText("Client Phone");
+                }
+            }
+        });
+        clientPhoneText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textKeyTyped(evt);
+            }
+        });
+        
         clientFaxText.setText("Client Fax");
+        clientFaxText.addFocusListener(new java.awt.event.FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                if (clientFaxText.getText().equals("Client Fax")) {
+                    clientFaxText.setText("");
+                }
+            }
 
+            @Override
+            public void focusLost(FocusEvent fe) {
+                if (clientFaxText.getText().equals("")) {
+                    clientFaxText.setText("Client Fax");
+                }
+            }
+        });
+        clientFaxText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textKeyTyped(evt);
+            }
+        });
+        
         clientEmailText.setText("Client Email");
+        clientEmailText.addFocusListener(new java.awt.event.FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                if (clientEmailText.getText().equals("Client Email")) {
+                    clientEmailText.setText("");
+                }
+            }
 
+            @Override
+            public void focusLost(FocusEvent fe) {
+                if (clientEmailText.getText().equals("")) {
+                    clientEmailText.setText("Client Email");
+                }
+            }
+        });
         addClientButton.setText("Add Client");
 
         warningLabel.setText("Please Complete All Fields");
@@ -117,19 +250,28 @@ public class ClientPanel extends javax.swing.JPanel {
     }
 
     public Client importClient() {
-        
-        Client client = new Client(clientNameText.getText(), new Address(clientCityText.getText(), clientStateText.getText(), 
-                Integer.parseInt(clientZipText.getText()), clientAddressText.getText()), Integer.parseInt(clientPhoneText.getText()), Integer.parseInt(clientFaxText.getText()), 
-                clientEmailText.getText(), today, "Active");
+        Client client = new Client(clientNameText.getText(), new Address(clientCityText.getText(), clientStateText.getText(),
+                Long.parseLong(clientZipText.getText()), clientAddressText.getText()), Long.parseLong(clientPhoneText.getText()), Long.parseLong(clientFaxText.getText()),
+                clientEmailText.getText(), "Active");
         return client;
 
     }
-    
+
+    private void textKeyTyped(java.awt.event.KeyEvent evt) {
+        char vchar = evt.getKeyChar();
+        if (!(Character.isDigit(vchar))
+                || (vchar == KeyEvent.VK_BACK_SPACE)
+                || (vchar == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }
+
+//    private void 
     public javax.swing.JButton getAddClientButton() {
         return addClientButton;
     }
-    private javax.swing.JButton addClientButton;
-    private javax.swing.JLabel addClientLabel;
+    private final javax.swing.JButton addClientButton;
+    private final javax.swing.JLabel addClientLabel;
     private javax.swing.JTextField clientNameText;
     private javax.swing.JTextField clientAddressText;
     private javax.swing.JTextField clientCityText;

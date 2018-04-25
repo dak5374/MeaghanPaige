@@ -62,51 +62,29 @@ public class MainTabbedPane extends JFrame {
             String msAccDB = "IST440MeaghanPaige.accdb";
             String dbURL = "jdbc:ucanaccess://src/meaghanpaigeinventorysystem/" + msAccDB;
             connection = DriverManager.getConnection(dbURL);
-            Client tempClient = clientPanel.importClient();
             clientPanel.getAddClientButton().addActionListener(new ActionListener() {
 
                 @Override
                 public void actionPerformed(ActionEvent ae) {
-                    
+
                     Statement statement;
                     try {
+                        Client tempClient = clientPanel.importClient();
                         statement = connection.createStatement();
-                        statement.executeUpdate("INSERT INTO Client" + "VALUES ('" + tempClient.getClientName() + "', '" + 
-                                tempClient.getClientAddress().getAddressStreet() + "', '" + tempClient.getClientAddress().getAddressCity() + "', '" + 
-                                tempClient.getClientAddress().getAddressState() + "', " + tempClient.getClientAddress().getAddressZip() + ", " + 
-                                tempClient.getClientPhone() + ", " + tempClient.getClientFax() + ", '" + tempClient.getClientEmail() + "', '" + 
-                                tempClient.getClientMembershipDate() + "', '" + tempClient.getClientMemberStatus() + "')");
+                        statement.executeUpdate("INSERT INTO Client (ClientName, BusinessAddress, City, State, ZipCode, PhoneNumber, FaxNumber,"
+                                + " Email, MemberStatus) VALUES ('" + tempClient.getClientName() + "', '"
+                                + tempClient.getClientAddress().getAddressStreet() + "', '" + tempClient.getClientAddress().getAddressCity() + "', '"
+                                + tempClient.getClientAddress().getAddressState() + "', " + tempClient.getClientAddress().getAddressZip() + ", "
+                                + tempClient.getClientPhone() + ", " + tempClient.getClientFax() + ", '" + tempClient.getClientEmail() + "', '"
+                                + tempClient.getClientMemberStatus() + "')");
+
                     } catch (SQLException ex) {
                         Logger.getLogger(MainTabbedPane.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.printStackTrace();
                     }
-                    
-
                 }
             });
 
-            //Test connection
-//            statement = connection.createStatement();
-//            resultSet = statement.executeQuery("SELECT * FROM CLIENT");
-//            System.out.println("CLIENT ID\t\tName\t\tAddress\t\t\t\tCity");
-//            System.out.println("==\t\t================\t===\t\t\t=======");
-//            while (resultSet.next()) {
-//                System.out.println(resultSet.getInt(1) + "\t\t\t"
-//                        + resultSet.getString(2) + "\t\t\t"
-//                        + resultSet.getString(3) + "\t\t"
-//                        + resultSet.getString(4));
-//            }
-//        } catch (SQLException sqlex) {
-//            sqlex.printStackTrace();
-//        } finally {
-//        }
-//        try {
-//            if (null != connection) {
-//
-//                resultSet.close();
-//                statement.close();
-//
-//                connection.close();
-//            }
         } catch (SQLException sqlex) {
             System.out.println("line 67");
             sqlex.printStackTrace();

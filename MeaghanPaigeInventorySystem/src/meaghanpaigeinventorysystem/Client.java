@@ -1,14 +1,12 @@
 package meaghanpaigeinventorysystem;
 
-import java.util.Date;
 public class Client {
 
     //Global variables
     private String clientName;
-    private int clientPhone;
-    private int clientFax;
+    private long clientPhone;
+    private long clientFax;
     private String clientEmail;
-    private Date clientMembershipDate;
     private String clientMemberStatus;
     private Address clientAddress;
 
@@ -17,16 +15,14 @@ public class Client {
 
     //Constructor
     public Client(String name, Address address,
-            int phone, int fax, String email,
-            Date membershipDate, String membershipStatus) {
+            long phone, long fax, String email,
+            /*Date membershipDate,*/ String membershipStatus) {
 
         this.setClientName(name);
         this.setClientAddress(address);
-
         this.setClientPhone(phone);
         this.setClientFax(fax);
         this.setClientEmail(email);
-        this.setClientMembershipDate(membershipDate);
         this.setClientMemberStatus(membershipStatus);
 
     }
@@ -62,28 +58,28 @@ public class Client {
     /**
      * @return the clientPhone
      */
-    public int getClientPhone() {
+    public long getClientPhone() {
         return clientPhone;
     }
 
     /**
      * @param clientPhone the clientPhone to set
      */
-    public void setClientPhone(int clientPhone) {
+    public void setClientPhone(long clientPhone) {
         this.clientPhone = clientPhone;
     }
 
     /**
      * @return the clientFax
      */
-    public int getClientFax() {
+    public long getClientFax() {
         return clientFax;
     }
 
     /**
      * @param clientFax the clientFax to set
      */
-    public void setClientFax(int clientFax) {
+    public void setClientFax(long clientFax) {
         this.clientFax = clientFax;
     }
 
@@ -102,20 +98,6 @@ public class Client {
     }
 
     /**
-     * @return the clientMembershipDate
-     */
-    public Date getClientMembershipDate() {
-        return clientMembershipDate;
-    }
-
-    /**
-     * @param clientMembershipDate the clientMembershipDate to set
-     */
-    public void setClientMembershipDate(Date clientMembershipDate) {
-        this.clientMembershipDate = clientMembershipDate;
-    }
-
-    /**
      * @return the clientMemberStatus
      */
     public String getClientMemberStatus() {
@@ -128,5 +110,4 @@ public class Client {
     public void setClientMemberStatus(String clientMemberStatus) {
         this.clientMemberStatus = clientMemberStatus;
     }
-
 }//End class
