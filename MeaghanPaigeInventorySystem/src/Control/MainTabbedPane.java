@@ -5,7 +5,7 @@
  */
 package Control;
 
-import View.ImportPanel;
+import View.InvoicePanel;
 import View.InventoryPanel;
 import View.WelcomePanel;
 import View.ClientPanel;
@@ -31,7 +31,7 @@ public class MainTabbedPane extends JFrame {
     Statement statement = null;
     ResultSet resultSet = null;
     WelcomePanel welcomePanel = new WelcomePanel();
-    ImportPanel importPanel = new ImportPanel();
+    InvoicePanel importPanel = new InvoicePanel();
     InventoryPanel inventoryPanel = new InventoryPanel();
     ClientPanel clientPanel = new ClientPanel();
     CustomerPanel customerPanel = new CustomerPanel();

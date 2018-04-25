@@ -186,7 +186,6 @@ public class ClientPanel extends javax.swing.JPanel {
                 }
             }
         });
-        addClientButton.setText("Add Client");
 
         warningLabel.setText("Please Complete All Fields");
 

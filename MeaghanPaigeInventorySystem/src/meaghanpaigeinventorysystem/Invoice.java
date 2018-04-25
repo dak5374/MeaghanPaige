@@ -6,25 +6,21 @@ public class Invoice {
     
     //Global variables
     private int invoiceID;
-    private Date invoiceDate;
     private String invoiceClientName;
     private String invoiceServiceDescription;
     private double invoiceDiscount;
-    private double invoiceTax;
+    private int invoiceTax;
     private String invoicePaymentType;
-    private double invoiceAmountDue;
     
     //Constructor
-    public Invoice (int id, Date date, String name, String description, double discount,
-                double tax, String paymentType, double amountDue){
-        this.setInvoiceID(id);
-        this.setInvoiceDate(date);
+    public Invoice (String name, String description, double discount,
+                int tax, String paymentType){
+
         this.setInvoiceClientName(name);
         this.setInvoiceServiceDescription(description);
         this.setInvoiceDiscount(discount);
         this.setInvoiceTax(tax);
         this.setInvoicePaymentType(paymentType);
-        this.setInvoiceAmountDue(amountDue);
     }
 
     /**
@@ -39,20 +35,6 @@ public class Invoice {
      */
     public void setInvoiceID(int invoiceID) {
         this.invoiceID = invoiceID;
-    }
-
-    /**
-     * @return the invoiceDate
-     */
-    public Date getInvoiceDate() {
-        return invoiceDate;
-    }
-
-    /**
-     * @param invoiceDate the invoiceDate to set
-     */
-    public void setInvoiceDate(Date invoiceDate) {
-        this.invoiceDate = invoiceDate;
     }
 
     /**
@@ -107,7 +89,7 @@ public class Invoice {
     /**
      * @param invoiceTax the invoiceTax to set
      */
-    public void setInvoiceTax(double invoiceTax) {
+    public void setInvoiceTax(int invoiceTax) {
         this.invoiceTax = invoiceTax;
     }
 
@@ -123,19 +105,5 @@ public class Invoice {
      */
     public void setInvoicePaymentType(String invoicePaymentType) {
         this.invoicePaymentType = invoicePaymentType;
-    }
-
-    /**
-     * @return the invoiceAmountDue
-     */
-    public double getInvoiceAmountDue() {
-        return invoiceAmountDue;
-    }
-
-    /**
-     * @param invoiceAmountDue the invoiceAmountDue to set
-     */
-    public void setInvoiceAmountDue(double invoiceAmountDue) {
-        this.invoiceAmountDue = invoiceAmountDue;
     }
 }

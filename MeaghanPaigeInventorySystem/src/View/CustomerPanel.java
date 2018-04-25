@@ -139,6 +139,7 @@ public class CustomerPanel extends javax.swing.JPanel {
                 }
             }
         });
+        
        customerPhoneText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textKeyTyped(evt);
