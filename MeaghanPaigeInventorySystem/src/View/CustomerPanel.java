@@ -118,6 +118,7 @@ public class CustomerPanel extends javax.swing.JPanel {
             }
         });
         customerZipText.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textKeyTyped(evt);
             }
@@ -140,6 +141,7 @@ public class CustomerPanel extends javax.swing.JPanel {
             }
         });
        customerPhoneText.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textKeyTyped(evt);
             }
@@ -162,6 +164,7 @@ public class CustomerPanel extends javax.swing.JPanel {
             }
         });
         customerFaxText.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textKeyTyped(evt);
             }
