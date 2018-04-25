@@ -10,6 +10,7 @@ import View.InventoryPanel;
 import View.WelcomePanel;
 import View.ClientPanel;
 import View.CustomerPanel;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -77,18 +78,21 @@ public class MainTabbedPane extends JFrame {
                                 + tempClient.getClientAddress().getAddressState() + "', " + tempClient.getClientAddress().getAddressZip() + ", "
                                 + tempClient.getClientPhone() + ", " + tempClient.getClientFax() + ", '" + tempClient.getClientEmail() + "', '"
                                 + tempClient.getClientMemberStatus() + "')");
-
+                        clientPanel.getWarningLabel().setForeground(Color.black);
+                        clientPanel.getWarningLabel().setText("Client Added Successfully");
                     } catch (SQLException ex) {
                         Logger.getLogger(MainTabbedPane.class.getName()).log(Level.SEVERE, null, ex);
                         ex.printStackTrace();
+                        clientPanel.getWarningLabel().setForeground(Color.RED);
+                        clientPanel.getWarningLabel().setText("ERROR, Please check all fields and try again!");
                     }
                 }
             });
 
         } catch (SQLException sqlex) {
-            System.out.println("line 67");
             sqlex.printStackTrace();
-
+            clientPanel.getWarningLabel().setForeground(Color.RED);
+            clientPanel.getWarningLabel().setText("ERROR, Please check all fields and try again!");
         }
     }
 

@@ -250,6 +250,7 @@ public class ClientPanel extends javax.swing.JPanel {
     }
 
     public Client importClient() {
+      //  if ()
         Client client = new Client(clientNameText.getText(), new Address(clientCityText.getText(), clientStateText.getText(),
                 Long.parseLong(clientZipText.getText()), clientAddressText.getText()), Long.parseLong(clientPhoneText.getText()), Long.parseLong(clientFaxText.getText()),
                 clientEmailText.getText(), "Active");
@@ -265,7 +266,10 @@ public class ClientPanel extends javax.swing.JPanel {
             evt.consume();
         }
     }
-
+    
+    public javax.swing.JLabel getWarningLabel() {
+        return warningLabel;
+    }
 //    private void 
     public javax.swing.JButton getAddClientButton() {
         return addClientButton;
