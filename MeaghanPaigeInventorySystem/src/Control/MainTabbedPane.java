@@ -17,10 +17,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
+import meaghanpaigeinventorysystem.Client;
 
 public class MainTabbedPane extends JFrame {
-    
+
     WelcomePanel wp;
 
     Connection connection = null;
@@ -35,23 +38,15 @@ public class MainTabbedPane extends JFrame {
     JTabbedPane mainTabbedPane = new JTabbedPane();
 
     public MainTabbedPane() {
-        
+
         mainTabbedPane.add("Welcome Panel", welcomePanel);
         mainTabbedPane.add("Import Panel", importPanel);
         mainTabbedPane.add("Inventory Panel", inventoryPanel);
         mainTabbedPane.add("Client Panel", clientPanel);
         mainTabbedPane.add("Customer Panel", customerPanel);
-                
-        add(mainTabbedPane);
-        
-        clientPanel.getAddClientButton().addActionListener(new ActionListener() {
 
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                //clientPanel.importClient();
-                
-            }
-        });
+        add(mainTabbedPane);
+
         try {
 
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -67,9 +62,29 @@ public class MainTabbedPane extends JFrame {
             String msAccDB = "IST440MeaghanPaige.accdb";
             String dbURL = "jdbc:ucanaccess://src/meaghanpaigeinventorysystem/" + msAccDB;
             connection = DriverManager.getConnection(dbURL);
-            
-            
-              //Test connection
+            Client tempClient = clientPanel.importClient();
+            clientPanel.getAddClientButton().addActionListener(new ActionListener() {
+
+                @Override
+                public void actionPerformed(ActionEvent ae) {
+                    
+                    Statement statement;
+                    try {
+                        statement = connection.createStatement();
+                        statement.executeUpdate("INSERT INTO Client" + "VALUES ('" + tempClient.getClientName() + "', '" + 
+                                tempClient.getClientAddress().getAddressStreet() + "', '" + tempClient.getClientAddress().getAddressCity() + "', '" + 
+                                tempClient.getClientAddress().getAddressState() + "', " + tempClient.getClientAddress().getAddressZip() + ", " + 
+                                tempClient.getClientPhone() + ", " + tempClient.getClientFax() + ", '" + tempClient.getClientEmail() + "', '" + 
+                                tempClient.getClientMembershipDate() + "', '" + tempClient.getClientMemberStatus() + "')");
+                    } catch (SQLException ex) {
+                        Logger.getLogger(MainTabbedPane.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+
+                }
+            });
+
+            //Test connection
 //            statement = connection.createStatement();
 //            resultSet = statement.executeQuery("SELECT * FROM CLIENT");
 //            System.out.println("CLIENT ID\t\tName\t\tAddress\t\t\t\tCity");

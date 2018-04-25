@@ -1,7 +1,6 @@
 package meaghanpaigeinventorysystem;
 
 import java.util.Date;
-import meaghanpaigeinventorysystem.Address;
 public class Client {
 
     //Global variables
