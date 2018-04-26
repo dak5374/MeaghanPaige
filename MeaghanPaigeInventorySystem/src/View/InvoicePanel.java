@@ -6,16 +6,20 @@
 package View;
 
 import Control.MainTabbedPane;
+import java.awt.Graphics;
 import java.awt.event.FocusEvent;
-import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 import meaghanpaigeinventorysystem.Invoice;
 
 /**
@@ -26,10 +30,13 @@ public class InvoicePanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ImportPanel
+     * @throws java.io.IOException
      */
-    public InvoicePanel() {
+    public InvoicePanel() {        
         initComponents();
     }
+    
+    
 
     private void initComponents() {
 
