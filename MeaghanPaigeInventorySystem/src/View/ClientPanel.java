@@ -30,7 +30,7 @@ public class ClientPanel extends javax.swing.JPanel {
         clientPhoneText = new javax.swing.JTextField();
         clientFaxText = new javax.swing.JTextField();
         clientEmailText = new javax.swing.JTextField();
-        addClientButton = new javax.swing.JButton();
+        addClientButton = new javax.swing.JButton("Add Client");
         warningLabel = new javax.swing.JLabel();
 
         addClientLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

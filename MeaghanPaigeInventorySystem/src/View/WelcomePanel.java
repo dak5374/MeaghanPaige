@@ -5,11 +5,6 @@
  */
 package View;
 
-import static java.awt.Component.RIGHT_ALIGNMENT;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.*;
-
 /**
  *
  * @author usmck
