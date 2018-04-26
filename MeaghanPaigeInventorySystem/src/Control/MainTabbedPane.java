@@ -45,7 +45,7 @@ public class MainTabbedPane extends JFrame {
 
         mainTabbedPane.add("Welcome Panel", welcomePanel);
         mainTabbedPane.add("Invoice Panel", invoicePanel);
-        mainTabbedPane.add("Inventory Panel", inventoryPanel);
+//        mainTabbedPane.add("Inventory Panel", inventoryPanel);
         mainTabbedPane.add("Client Panel", clientPanel);
         mainTabbedPane.add("Customer Panel", customerPanel);
 
