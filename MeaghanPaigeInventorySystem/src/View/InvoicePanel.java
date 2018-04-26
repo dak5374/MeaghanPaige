@@ -58,7 +58,6 @@ public class InvoicePanel extends javax.swing.JPanel {
             resultSet = statement.executeQuery("SELECT ClientName FROM Client");
             while (resultSet.next()) {
                 String set = resultSet.getString("ClientName");
-                System.out.println(set + "\n");
                 getClientComboBox().addItem(set);
             }
             connection.close();
