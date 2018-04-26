@@ -9,15 +9,17 @@ public class Invoice {
     private String invoiceClientName;
     private String invoiceServiceDescription;
     private double invoiceDiscount;
-    private int invoiceTax;
+    private double invoiceTax;
     private String invoicePaymentType;
+    private double invoiceRetailPrice;
     
     //Constructor
-    public Invoice (String name, String description, double discount,
-                int tax, String paymentType){
+    public Invoice (int iD, String description, double retailPrice, double discount,
+                double tax, String paymentType){
 
-        this.setInvoiceClientName(name);
+        this.setInvoiceID(iD);
         this.setInvoiceServiceDescription(description);
+        this.setInvoiceRetailPrice(retailPrice);
         this.setInvoiceDiscount(discount);
         this.setInvoiceTax(tax);
         this.setInvoicePaymentType(paymentType);
@@ -89,7 +91,7 @@ public class Invoice {
     /**
      * @param invoiceTax the invoiceTax to set
      */
-    public void setInvoiceTax(int invoiceTax) {
+    public void setInvoiceTax(double invoiceTax) {
         this.invoiceTax = invoiceTax;
     }
 
@@ -105,5 +107,19 @@ public class Invoice {
      */
     public void setInvoicePaymentType(String invoicePaymentType) {
         this.invoicePaymentType = invoicePaymentType;
+    }
+
+    /**
+     * @return the invoiceRetailPrice
+     */
+    public double getInvoiceRetailPrice() {
+        return invoiceRetailPrice;
+    }
+
+    /**
+     * @param invoiceRetailPrice the invoiceRetailPrice to set
+     */
+    public void setInvoiceRetailPrice(double invoiceRetailPrice) {
+        this.invoiceRetailPrice = invoiceRetailPrice;
     }
 }
