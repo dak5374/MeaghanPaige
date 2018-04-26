@@ -38,7 +38,9 @@ public class MainTabbedPane extends JFrame {
     CustomerPanel customerPanel = new CustomerPanel();
 
     JTabbedPane mainTabbedPane = new JTabbedPane();
-
+    
+    //creates the JFrame with tabs for each JPanel.
+    
     public MainTabbedPane() {
 
         mainTabbedPane.add("Welcome Panel", welcomePanel);
@@ -50,7 +52,7 @@ public class MainTabbedPane extends JFrame {
         add(mainTabbedPane);        
 
         try {
-
+            //loads the JDBC driver that allows the application to connect to the database.
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
         } catch (ClassNotFoundException cnfex) {
 
@@ -60,11 +62,11 @@ public class MainTabbedPane extends JFrame {
         }
 
         try {
-
+            //creates necessary strings to allow the application to find the location of the database utilizing the UcanaccessDriver.
             String msAccDB = "IST440MeaghanPaige.accdb";
             String dbURL = "jdbc:ucanaccess://src/meaghanpaigeinventorysystem/" + msAccDB;
             connection = DriverManager.getConnection(dbURL);
-
+            //after connection to the database is secured, the invoice panel createInvoiceButton is retrieved and fitted with an ActionListener. This will check to make sure all fields are properly completed.
             invoicePanel.getCreateInvoiceButton().addActionListener(new ActionListener() {
 
                 @Override
@@ -79,6 +81,7 @@ public class MainTabbedPane extends JFrame {
                         } else {
                         Invoice tempInvoice = invoicePanel.importInvoice();
                         statement = connection.createStatement();
+                        //SQL statement is injected with the values entered into the appropriate fields.
                         statement.executeUpdate("INSERT INTO Invoice (fkClientID, ServiceDescription, RetailPrice, DiscountAmount, Tax, PaymentType) VALUES ("
                                 + tempInvoice.getInvoiceID() + ", '"
                                 + tempInvoice.getInvoiceServiceDescription() + "', " + tempInvoice.getInvoiceRetailPrice() + ", "
@@ -96,7 +99,7 @@ public class MainTabbedPane extends JFrame {
                     }
                 }
             });
-
+            //clientPanel addClientButton is retrieved and fitted with an ActionListener. This will check to make sure all fields are properly completed.
             clientPanel.getAddClientButton().addActionListener(new ActionListener() {
 
                 @Override
