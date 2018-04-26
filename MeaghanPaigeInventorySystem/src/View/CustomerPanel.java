@@ -7,6 +7,7 @@ package View;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
 import java.util.Date;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import meaghanpaigeinventorysystem.Address;
 import meaghanpaigeinventorysystem.Customer;
@@ -14,6 +15,8 @@ import meaghanpaigeinventorysystem.Customer;
 public class CustomerPanel extends javax.swing.JPanel {
     
     Date today = new Date();
+    
+    private  JLabel customerBackgroundImage;
 
     public CustomerPanel() {
 
@@ -43,9 +46,9 @@ public class CustomerPanel extends javax.swing.JPanel {
             }
 
             @Override
-            public void focusLost(FocusEvent e) {
-                if (customerNameText.getText().equals("Customer Name")) {
-                    customerNameText.setText("");
+            public void focusLost(FocusEvent fe) {
+                if (customerNameText.getText().equals("")) {
+                    customerNameText.setText("Customer Name");
                 }
             }
         });
@@ -118,6 +121,7 @@ public class CustomerPanel extends javax.swing.JPanel {
             }
         });
         customerZipText.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textKeyTyped(evt);
             }
@@ -127,7 +131,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         customerPhoneText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (customerPhoneText.getText().equals("Customer Phone")) {
+                if (customerPhoneText.getText().equals("Customer Phone Number")) {
                     customerPhoneText.setText("");
                 }
             }
@@ -135,12 +139,13 @@ public class CustomerPanel extends javax.swing.JPanel {
             @Override
             public void focusLost(FocusEvent fe) {
                 if (customerPhoneText.getText().equals("")) {
-                    customerPhoneText.setText("Customer Phone");
+                    customerPhoneText.setText("Customer Phone Number");
                 }
             }
         });
         
        customerPhoneText.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textKeyTyped(evt);
             }
@@ -150,7 +155,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         customerFaxText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (customerFaxText.getText().equals("Customer Fax")) {
+                if (customerFaxText.getText().equals("Customer Fax Number")) {
                     customerFaxText.setText("");
                 }
             }
@@ -158,11 +163,12 @@ public class CustomerPanel extends javax.swing.JPanel {
             @Override
             public void focusLost(FocusEvent fe) {
                 if (customerFaxText.getText().equals("")) {
-                    customerFaxText.setText("Customer Fax");
+                    customerFaxText.setText("Customer Fax Number");
                 }
             }
         });
         customerFaxText.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textKeyTyped(evt);
             }
@@ -172,7 +178,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         customerEmailText.addFocusListener(new java.awt.event.FocusListener() {
             @Override
             public void focusGained(FocusEvent fe) {
-                if (customerEmailText.getText().equals("CustomerEmail")) {
+                if (customerEmailText.getText().equals("Customer Email")) {
                     customerEmailText.setText("");
                 }
             }
@@ -188,9 +194,16 @@ public class CustomerPanel extends javax.swing.JPanel {
         addCustomerButton.setText("Add Customer");
         
         warningLabel.setText("Please Complete All Fields");
+        
+                //Add background image
+        customerBackgroundImage = new javax.swing.JLabel();
+        this.add(customerBackgroundImage);
+        ImageIcon WelcomePageImage = new ImageIcon(this.getClass().getResource("/Images/welcomePageImg1.jpg"));
+        this.customerBackgroundImage.setIcon(WelcomePageImage);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
+        
         
         //Horizontal Group
         layout.setHorizontalGroup(
