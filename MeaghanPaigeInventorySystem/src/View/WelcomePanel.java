@@ -5,17 +5,19 @@
  */
 package View;
 
-import static java.awt.Component.RIGHT_ALIGNMENT;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.*;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
  * @author usmck
  */
 public class WelcomePanel extends javax.swing.JPanel {
-
 
     private javax.swing.JLabel welcomeLabel;
 
@@ -24,13 +26,14 @@ public class WelcomePanel extends javax.swing.JPanel {
     }
 
     private void initComponents() {
+        
         welcomeLabel = new javax.swing.JLabel();
+        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        this.add(welcomeLabel);
+        ImageIcon WelcomePageImage = new ImageIcon(this.getClass().getResource("/Images/welcomePageImg1.jpg"));
+        this.welcomeLabel.setIcon(WelcomePageImage);
+               
+    }//End initComponents
 
         
-
-
-        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        welcomeLabel.setText("Welcome to the Meaghan Paige Inventory Tracker!");
-        this.add(welcomeLabel);
-    }
-}
+}   

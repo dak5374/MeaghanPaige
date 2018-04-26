@@ -5,23 +5,31 @@
  */
 package View;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author usmck
  */
 public class InventoryPanel extends javax.swing.JPanel{
 
+    private javax.swing.JLabel backgroundImageLabel;
+    
+
+
     public InventoryPanel() {
         initComponents();
     }
 
     private void initComponents() {
-
+        
         inventoryLabel = new javax.swing.JLabel();
         addNewProdButton = new javax.swing.JButton();
         addRemovePromptLabel = new javax.swing.JLabel();
         addExistingButton = new javax.swing.JButton();
         adjustQuantityButton = new javax.swing.JButton();
+        backgroundImageLabel = new javax.swing.JLabel();
 
         inventoryLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         inventoryLabel.setText("Inventory");
@@ -33,6 +41,15 @@ public class InventoryPanel extends javax.swing.JPanel{
         addExistingButton.setText("Add Existing Product");
 
         adjustQuantityButton.setText("Adjust Product Quantity");
+        
+        this.add(backgroundImageLabel);
+        ImageIcon backgroundImageIcon = new ImageIcon(this.getClass().getResource("/Images/welcomePageImg1.jpg"));
+        backgroundImageLabel.setIcon(backgroundImageIcon);
+        
+        
+        
+        
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -57,6 +74,7 @@ public class InventoryPanel extends javax.swing.JPanel{
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(inventoryLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(addRemovePromptLabel)
                                 .addGap(32, 32, 32)

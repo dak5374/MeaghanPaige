@@ -6,25 +6,23 @@ public class Invoice {
     
     //Global variables
     private int invoiceID;
-    private Date invoiceDate;
     private String invoiceClientName;
     private String invoiceServiceDescription;
     private double invoiceDiscount;
     private double invoiceTax;
     private String invoicePaymentType;
-    private double invoiceAmountDue;
+    private double invoiceRetailPrice;
     
     //Constructor
-    public Invoice (int id, Date date, String name, String description, double discount,
-                double tax, String paymentType, double amountDue){
-        this.setInvoiceID(id);
-        this.setInvoiceDate(date);
-        this.setInvoiceClientName(name);
+    public Invoice (int iD, String description, double retailPrice, double discount,
+                double tax, String paymentType){
+
+        this.setInvoiceID(iD);
         this.setInvoiceServiceDescription(description);
+        this.setInvoiceRetailPrice(retailPrice);
         this.setInvoiceDiscount(discount);
         this.setInvoiceTax(tax);
         this.setInvoicePaymentType(paymentType);
-        this.setInvoiceAmountDue(amountDue);
     }
 
     /**
@@ -39,20 +37,6 @@ public class Invoice {
      */
     public void setInvoiceID(int invoiceID) {
         this.invoiceID = invoiceID;
-    }
-
-    /**
-     * @return the invoiceDate
-     */
-    public Date getInvoiceDate() {
-        return invoiceDate;
-    }
-
-    /**
-     * @param invoiceDate the invoiceDate to set
-     */
-    public void setInvoiceDate(Date invoiceDate) {
-        this.invoiceDate = invoiceDate;
     }
 
     /**
@@ -126,16 +110,16 @@ public class Invoice {
     }
 
     /**
-     * @return the invoiceAmountDue
+     * @return the invoiceRetailPrice
      */
-    public double getInvoiceAmountDue() {
-        return invoiceAmountDue;
+    public double getInvoiceRetailPrice() {
+        return invoiceRetailPrice;
     }
 
     /**
-     * @param invoiceAmountDue the invoiceAmountDue to set
+     * @param invoiceRetailPrice the invoiceRetailPrice to set
      */
-    public void setInvoiceAmountDue(double invoiceAmountDue) {
-        this.invoiceAmountDue = invoiceAmountDue;
+    public void setInvoiceRetailPrice(double invoiceRetailPrice) {
+        this.invoiceRetailPrice = invoiceRetailPrice;
     }
 }

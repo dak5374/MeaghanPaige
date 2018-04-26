@@ -30,7 +30,7 @@ public class ClientPanel extends javax.swing.JPanel {
         clientPhoneText = new javax.swing.JTextField();
         clientFaxText = new javax.swing.JTextField();
         clientEmailText = new javax.swing.JTextField();
-        addClientButton = new javax.swing.JButton();
+        addClientButton = new javax.swing.JButton("Add Client");
         warningLabel = new javax.swing.JLabel();
 
         addClientLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -43,7 +43,7 @@ public class ClientPanel extends javax.swing.JPanel {
                 if (getClientNameText().getText().equals("Client Name")) {
                     getClientNameText().setText("");
                 }
-            }
+            } 
 
             @Override
             public void focusLost(FocusEvent fe) {
@@ -186,7 +186,6 @@ public class ClientPanel extends javax.swing.JPanel {
                 }
             }
         });
-        addClientButton.setText("Add Client");
 
         warningLabel.setText("Please Complete All Fields");
 
