@@ -43,7 +43,7 @@ public class ClientPanel extends javax.swing.JPanel {
                 if (getClientNameText().getText().equals("Client Name")) {
                     getClientNameText().setText("");
                 }
-            }
+            } 
 
             @Override
             public void focusLost(FocusEvent fe) {
