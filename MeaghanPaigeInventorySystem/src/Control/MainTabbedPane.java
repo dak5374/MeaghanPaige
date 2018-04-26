@@ -46,7 +46,7 @@ public class MainTabbedPane extends JFrame {
         mainTabbedPane.add("Client Panel", clientPanel);
         mainTabbedPane.add("Customer Panel", customerPanel);
 
-        add(mainTabbedPane);
+        add(mainTabbedPane);        
 
         try {
 
