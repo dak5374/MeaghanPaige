@@ -46,9 +46,9 @@ public class CustomerPanel extends javax.swing.JPanel {
             }
 
             @Override
-            public void focusLost(FocusEvent e) {
-                if (customerNameText.getText().equals("Customer Name")) {
-                    customerNameText.setText("");
+            public void focusLost(FocusEvent fe) {
+                if (customerNameText.getText().equals("")) {
+                    customerNameText.setText("Customer Name");
                 }
             }
         });
